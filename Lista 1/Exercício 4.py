@@ -10,11 +10,7 @@ class Musica:
         print('Tocando agora {} por {}.'.format(self.nome,self.artistabanda))
 
     def informacoes(self):
-        print('''Título: {} 
-Artista/Banda: {}
-Gênero: {}
-Ano: {}
-Duração: {}.'''.format(self.nome, self.artistabanda, self.genero, self.ano, self.duracao))
+        print('''Título: {}\nArtista/Banda: {}\nGênero: {}\nAno: {}\nDuração: {}.'''.format(self.nome, self.artistabanda, self.genero, self.ano, self.duracao))
 
 lt = Musica('Lagtrain', 'Inabakumori', 'Vocaloid','2020','4:11')
 ps = Musica('Post Shelter', 'Inabakumori', 'Vocaloid','2022','3:20')
