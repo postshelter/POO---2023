@@ -16,7 +16,7 @@ class Mago:
     def invocarMagia(self):
         print('Invocando magia!')
 
-    def qualRaça(self):
+    def qualRaca(self):
         print('Eu sou {}.'.format(self.raca))
 
     #Raça num contexto de RPG. (ex: Humano, Elfo, Orc, etc.)
@@ -64,23 +64,23 @@ print(md.raca)
 hp.andar()
 hp.falar()
 hp.invocarMagia()
-hp.qualRaça()
+hp.qualRaca()
 hp.boladeFogo()
 
 kt.andar()
 kt.falar()
 kt.invocarMagia()
-kt.qualRaça()
+kt.qualRaca()
 kt.boladeFogo()
 
 ktz.andar()
 ktz.falar()
 ktz.invocarMagia()
-ktz.qualRaça()
+ktz.qualRaca()
 ktz.boladeFogo()
 
 md.andar()
 md.falar()
 md.invocarMagia()
-md.qualRaça()
+md.qualRaca()
 md.boladeFogo()
