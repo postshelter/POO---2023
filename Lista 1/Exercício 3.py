@@ -99,8 +99,8 @@ class DataCustom:
         else:
             return 'Data inválida.'   
     def exibirDataPorExtenso(self, cidade):
-        mes = self.retornoMesExtenso()
-        print("{}, {} do {} de {}.".format(cidade,self.__dia,self.__mes,self.__ano))
+        self.__mes = self.retornoMesExtenso()
+        print("{}, {} de {} de {}.".format(cidade,self.__dia,self.__mes,self.__ano))
 
 
 
