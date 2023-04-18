@@ -1,3 +1,4 @@
+#Exercício 1
 class Pais:
     def __init__(self, codigo_iso=None, nome=None, populacao=None, dimensao=None):
         self.codigo_iso = codigo_iso
@@ -182,3 +183,101 @@ vizinhosComuns = (pais01.fronteirasComuns(pais02))
 
 for i in vizinhosComuns:
     print(i.getCodigo())
+
+
+
+#Exercício 2
+class Continente:
+    def __init__(self, nome = None):
+        self.nome = nome
+        self.paises = []
+        
+    def setNome(self, nome):
+        self.nome = nome
+
+    def adicionarPais(self, pais):
+        self.paises.append(pais)
+
+    def dimensaoTotal(self):
+        return sum (pais.dimensao for pais in self.paises)
+    
+    def populacaoTotal(self):
+        return sum (pais.populacao for pais in self.paises)
+    
+    def dimensaoMax(self):
+        return max (pais.dimensao for pais in self.paises)
+    
+    def dimensaoMin(self):
+        return min (pais.dimensao for pais in self.paises)
+    
+    def densidadeDemografica(self):
+        return self.populacaoTotal() / self.dimensaoTotal()
+
+    def populacaoMax(self):
+        maior_pop = 0
+        nomemaxpop = ''
+        for pais in self.paises:
+            if pais.populacao > maior_pop:
+                maior_pop = pais.populacao
+                nomemaxpop = pais.nome
+                return nomemaxpop
+            
+    def populacaoMin(self):
+        menor_pop = float('inf') #Tive que procurar essa variável na internet, não consegui fazer inicializando com zero.
+        nomeminpop = ''
+        for pais in self.paises: 
+            if pais.populacao < menor_pop:
+                menor_pop = pais.populacao
+                nomeminpop = pais.nome
+        return nomeminpop
+    
+    def dimensaoMaxNome(self):
+        maior_dim = 0
+        nomemaxdim = ''
+        for pais in self.paises:
+            if pais.dimensao > maior_dim:
+                maior_dim = pais.dimensao
+                nomemaxdim = pais.nome
+                return nomemaxdim
+
+    def dimensaoMinNome(self):
+        menor_dim = float('inf')
+        nomemindim = ''
+        for pais in self.paises:
+            if pais.dimensao < menor_dim:
+                menor_dim = pais.dimensao
+                nomemindim = pais.nome
+        return nomemindim
+    
+    def razaoTerritorial(self):
+        return (self.dimensaoMax() / self.dimensaoMin())
+
+
+continente1 = Continente('América do Sul')
+continente1.adicionarPais(pais01)
+continente1.adicionarPais(pais02)
+continente1.adicionarPais(pais03)
+continente1.adicionarPais(pais04)
+continente1.adicionarPais(pais05)
+continente1.adicionarPais(pais06)
+
+dimensaototal = continente1.dimensaoTotal()
+populacaototal = continente1.populacaoTotal()
+densidade_demografica = continente1.densidadeDemografica()
+populacaomaxima = continente1.populacaoMax()
+populacaominima = continente1.populacaoMin()
+dimensaomaxima = continente1.dimensaoMaxNome()
+dimensaominima = continente1.dimensaoMinNome()
+razaoterritorio = continente1.razaoTerritorial()
+
+
+print('------------Informações do continente------------')
+print ('A dimensão total do continente é de {} km².'.format(dimensaototal))
+print('A população total do continente é de {} habitantes.'.format(populacaototal))
+print('A densidade populacional do continente é de {} hab/km².'.format(densidade_demografica))
+print('O país com o maior número de habitantes é {}.'.format(populacaomaxima))
+print('O país com o menor número de habitantes é {}.'.format(populacaominima))
+print('O país com a maior dimensão territorial é {}.'.format(dimensaomaxima))
+print('O país com a menor dimensão territorial é {}.'.format(dimensaominima))
+print('A razão territorial entre o maior e o menor país é {}.'.format(razaoterritorio))
+
